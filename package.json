@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "@sendgrid/mail": "^8.3.0"
+    "@sendgrid/mail": "^8.1.5"
   }
 } 
