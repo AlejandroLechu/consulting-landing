@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: process.env.RESEND_FROM || 'Alejandro Lechu <noreply@resend.dev>',
+      from: process.env.RESEND_FROM || 'onboarding@resend.dev',
       to: 'lechuga.alejandro@gmail.com',
       reply_to: email,
       subject: `New consulting inquiry from ${name}`,
