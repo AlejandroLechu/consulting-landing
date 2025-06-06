@@ -22,4 +22,6 @@ body { margin: 0; font-family: 'Inter', sans-serif; color: #333; line-height: 1.
   body { background-color: #111827; color: #e5e7eb; }
   .card { background: #1f2937; color: #e5e7eb; }
   .hero { background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); }
+  .section.alt { background: #1f2937; }
+  .section.alt h2, .section.alt p { color: #e5e7eb; }
 } 
