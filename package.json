@@ -1,0 +1,8 @@
+{
+  "name": "consulting-landing",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^8.3.0"
+  }
+} 

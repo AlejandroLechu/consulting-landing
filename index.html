@@ -53,7 +53,7 @@
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="_replyto" required>
+          <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
           <label for="message">Message</label>
@@ -69,5 +69,40 @@
       <p>&copy; 2025 Alejandro Lechu Consulting. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const form = document.querySelector('.contact-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      const btn = form.querySelector('button');
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('/api/send', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          form.reset();
+          alert('Thank you! Your message has been sent.');
+        } else {
+          alert('Sorry, something went wrong. Please try again later.');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Network error. Please try again.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    });
+  </script>
 </body>
 </html> 
